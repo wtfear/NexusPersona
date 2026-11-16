@@ -4,6 +4,7 @@ import path from "node:path";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
+  baseURL: process.env.OPENAI_BASE_URL || undefined,
 });
 
 /**

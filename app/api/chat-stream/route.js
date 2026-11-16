@@ -5,7 +5,10 @@ import { personaToSystem } from "@/lib/persona-to-system";
 
 export const runtime = "nodejs"; 
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+  baseURL: process.env.OPENAI_BASE_URL || undefined,
+});
 
 async function loadRawPersona(id) {
   const personaPath = path.join(process.cwd(), "app", "api", "person", `${id}.json`);
