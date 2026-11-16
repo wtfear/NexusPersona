@@ -1,4 +1,4 @@
-export type MentorId = "hitesh" | "piyush";
+export type MentorId = "pavan" | "sai" | "manjith" | "hitesh" | "piyush";
 
 export type Mentor = {
   id: MentorId;
@@ -6,26 +6,59 @@ export type Mentor = {
   avatar: string;
   role: string;
   greeting: string;
-  colorBadge?: string; // optional for card accent
+  colorBadge?: string;
+  badges?: string[];
 };
 
-export const mentors: Record<MentorId, Mentor> = {
-  hitesh: {
-    id: "hitesh",
-    name: "Hitesh Choudhary",
-    avatar: "https://avatars.githubusercontent.com/u/11613311?v=4",
+export const mentors: Record<string, Mentor> = {
+  pavan: {
+    id: "pavan",
+    name: "Pavan Kumar Kunukuntla",
+    avatar: "/pavan.jpg",
     role:
-      "Retired from corporate and full time YouTuber, x founder of LCO (acquired), x CTO, Sr. Director at PW. 2 YT channels (1M & 600k), stepped into 43 countries.",
-    greeting: "Haan ji !",
+      "Founder at WTFear Agency & Computer Science Engineer. Architecting enterprise autonomous AI agents, sub-second voice pipelines, and modern full-stack platforms.",
+    greeting: "Hello! I'm Pavan. How can I help you architect your AI and SaaS systems today?",
     colorBadge: "#eab308",
+    badges: ["Founder", "AI Architect", "Full-Stack", "RGUKT"],
+  },
+  sai: {
+    id: "sai",
+    name: "Sai Manjith",
+    avatar: "https://ui-avatars.com/api/?name=Sai+Manjith&background=6366f1&color=fff&size=256&bold=true",
+    role:
+      "Co-Founder & Platform Systems Engineer. Specializing in high-throughput backend infrastructure, distributed platform systems, and scalable cloud architectures.",
+    greeting: "Hey there! I'm Sai Manjith. What technical challenge or backend pipeline are we solving today?",
+    colorBadge: "#a855f7",
+    badges: ["Co-Founder", "Platform Engineer", "Systems", "Cloud"],
+  },
+  manjith: {
+    id: "manjith",
+    name: "Sai Manjith Paripelli",
+    avatar: "https://ui-avatars.com/api/?name=Sai+Manjith+Paripelli&background=06b6d4&color=fff&size=256&bold=true",
+    role:
+      "Technical Strategist & Product Systems Lead. Guiding enterprise technological roadmaps, platform engineering, and high-performance system designs.",
+    greeting: "Greetings! I'm Sai Manjith Paripelli. Let's discuss technical strategy, systems architecture, and engineering execution.",
+    colorBadge: "#06b6d4",
+    badges: ["Tech Strategist", "Product Lead", "Architecture", "Consultant"],
+  },
+  hitesh: {
+    id: "pavan",
+    name: "Pavan Kumar Kunukuntla",
+    avatar: "/pavan.jpg",
+    role:
+      "Founder at WTFear Agency & Computer Science Engineer. Architecting enterprise autonomous AI agents, sub-second voice pipelines, and modern full-stack platforms.",
+    greeting: "Hello! I'm Pavan. How can I help you architect your AI and SaaS systems today?",
+    colorBadge: "#eab308",
+    badges: ["Founder", "AI Architect", "Full-Stack", "RGUKT"],
   },
   piyush: {
-    id: "piyush",
-    name: "Piyush Garg",
-    avatar: "https://avatars.githubusercontent.com/u/44976328",
+    id: "sai",
+    name: "Sai Manjith",
+    avatar: "https://ui-avatars.com/api/?name=Sai+Manjith&background=6366f1&color=fff&size=256&bold=true",
     role:
-      "Meet Piyush Garg, content creator, educator, and entrepreneur known for his expertise in the tech industry. He has successfully launched numerous technical courses on various platforms. Founder of Teachyst, white-labeled Learning Management System (LMS) to help educators monetize their content globally.",
-    greeting: "Hey!",
+      "Co-Founder & Platform Systems Engineer. Specializing in high-throughput backend infrastructure, distributed platform systems, and scalable cloud architectures.",
+    greeting: "Hey there! I'm Sai Manjith. What technical challenge or backend pipeline are we solving today?",
     colorBadge: "#a855f7",
+    badges: ["Co-Founder", "Platform Engineer", "Systems", "Cloud"],
   },
 };

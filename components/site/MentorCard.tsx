@@ -13,7 +13,7 @@ type Props = {
     linkedin?: string;
     github?: string;
   };
-  accent?: "amber" | "purple";
+  accent?: "amber" | "purple" | "cyan";
   delayMs?: number;
   ctaPosition?: "left" | "right";
 };
@@ -29,6 +29,8 @@ export default function MentorCard({
   const accentClasses =
     accent === "amber"
       ? "hover:border-[#eab308]/30 hover:-translate-y-1 hover:shadow-[0_20px_40px_-12px_rgba(234,179,8,.2)]"
+      : accent === "cyan"
+      ? "hover:border-cyan-400/30 hover:-translate-y-1 hover:shadow-[0_20px_40px_-12px_rgba(6,182,212,.2)]"
       : "hover:border-purple-400/30 hover:-translate-y-1 hover:shadow-[0_20px_40px_-12px_rgba(168,85,247,.2)]";
 
   const CTA = (
@@ -37,6 +39,8 @@ export default function MentorCard({
       className={
         accent === "amber"
           ? "w-1/2 bg-gradient-to-r from-[#eab308] to-[#f59e0b] text-black font-semibold rounded-xl hover:shadow-[0_10px_30px_-12px_rgba(245,158,11,.6)] transition-all duration-300 cursor-pointer"
+          : accent === "cyan"
+          ? "w-1/2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:shadow-[0_10px_30px_-12px_rgba(6,182,212,.6)] transition-all duration-300 cursor-pointer"
           : "w-1/2 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold rounded-xl hover:shadow-[0_10px_30px_-12px_rgba(168,85,247,.6)] transition-all duration-300 cursor-pointer"
       }
     >
@@ -84,9 +88,11 @@ export default function MentorCard({
             <img
               src={mentor.avatar}
               alt={mentor.name}
-              className={`w-16 h-16 rounded-full border-2 ${
+              className={`w-16 h-16 rounded-full border-2 object-cover object-center ${
                 accent === "amber"
                   ? "border-[#eab308]/30 group-hover:border-[#eab308]/60"
+                  : accent === "cyan"
+                  ? "border-cyan-400/30 group-hover:border-cyan-400/60"
                   : "border-purple-400/30 group-hover:border-purple-400/60"
               } transition-colors`}
             />
@@ -94,26 +100,20 @@ export default function MentorCard({
           </div>
           <div className="text-left">
             <h3 className="text-white font-semibold text-lg">{mentor.name}</h3>
-            <div className="flex gap-2 mt-1">
-              <span
-                className="px-2 py-1 text-xs rounded-full border"
-                style={{
-                  color: mentor.colorBadge ?? "#eab308",
-                  background: `${(mentor.colorBadge ?? "#eab308")}33`,
-                  borderColor: `${(mentor.colorBadge ?? "#eab308")}4d`,
-                }}
-              >
-                Tech Educator
-              </span>
-              <span className="px-2 py-1 bg-cyan-400/20 text-cyan-400 text-xs rounded-full border border-cyan-400/30">
-                Mentor
-              </span>
-              <span className="px-2 py-1 bg-cyan-400/20 text-cyan-400 text-xs rounded-full border border-cyan-400/30">
-                YouTuber
-              </span>
-              <span className="px-2 py-1 bg-cyan-400/20 text-cyan-400 text-xs rounded-full border border-cyan-400/30">
-                Full-Stack
-              </span>
+            <div className="flex flex-wrap gap-1.5 mt-1">
+              {(mentor.badges ?? ["AI Architect", "Full-Stack"]).map((badge, idx) => (
+                <span
+                  key={idx}
+                  className="px-2 py-0.5 text-xs rounded-full border"
+                  style={{
+                    color: mentor.colorBadge ?? "#eab308",
+                    background: `${mentor.colorBadge ?? "#eab308"}26`,
+                    borderColor: `${mentor.colorBadge ?? "#eab308"}4d`,
+                  }}
+                >
+                  {badge}
+                </span>
+              ))}
             </div>
           </div>
         </div>

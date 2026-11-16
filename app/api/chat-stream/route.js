@@ -11,9 +11,16 @@ const openai = new OpenAI({
 });
 
 async function loadRawPersona(id) {
-  const personaPath = path.join(process.cwd(), "app", "api", "person", `${id}.json`);
-  const raw = await fs.readFile(personaPath, "utf8");
-  return raw;
+  let targetId = id;
+  if (targetId === "hitesh") targetId = "pavan";
+  if (targetId === "piyush") targetId = "sai";
+  let personaPath = path.join(process.cwd(), "app", "api", "person", `${targetId}.json`);
+  try {
+    return await fs.readFile(personaPath, "utf8");
+  } catch {
+    personaPath = path.join(process.cwd(), "app", "api", "person", "pavan.json");
+    return await fs.readFile(personaPath, "utf8");
+  }
 }
 
 export async function POST(request) {

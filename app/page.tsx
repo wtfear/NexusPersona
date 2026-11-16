@@ -11,7 +11,7 @@ import { mentors, MentorId } from "@/types/mentors";
 export default function HomePage() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
-  const [activeMentor, setActiveMentor] = useState<MentorId>("hitesh");
+  const [activeMentor, setActiveMentor] = useState<MentorId>("pavan");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<{id:string;role:"user"|"assistant";content:string}[]>([]);
   const [isTyping, setIsTyping] = useState(false);
@@ -95,35 +95,42 @@ export default function HomePage() {
         isTyping={isTyping}  
       />
 
-      <main className="relative z-10 max-w-7xl mx-auto px-6 h-[calc(100vh-80px)] flex items-center">
+      <main className="relative z-10 max-w-7xl mx-auto px-6 min-h-[calc(100vh-80px)] flex items-center py-8">
         <div className="w-full grid lg:grid-cols-2 gap-12 items-center">
           <Hero loaded={isLoaded} />
 
-          <div className="space-y-6">
+          <div className="space-y-4 max-h-[82vh] overflow-y-auto pr-1">
             <MentorCard
-              mentor={mentors.hitesh}
+              mentor={mentors.pavan}
               onChat={openChat}
               accent="amber"
               delayMs={200}
               ctaPosition="right"
               social={{
-                youtube: "https://www.youtube.com/@HiteshCodeLab",
-                twitter: "https://x.com/Hiteshdotcom",
-                linkedin: "https://www.linkedin.com/in/hiteshchoudhary/",
-                github: "https://github.com/hiteshchoudhary",
+                linkedin: "https://www.linkedin.com/in/pavan-kumar-kunukuntla",
+                github: "https://github.com/pavankunukuntla",
               }}
             />
             <MentorCard
-              mentor={mentors.piyush}
+              mentor={mentors.sai}
               onChat={openChat}
               accent="purple"
               ctaPosition="left"
+              delayMs={300}
+              social={{
+                linkedin: "https://www.linkedin.com/search/results/all/?keywords=Sai%20Manjith",
+                github: "https://github.com/wtfear",
+              }}
+            />
+            <MentorCard
+              mentor={mentors.manjith}
+              onChat={openChat}
+              accent="cyan"
+              ctaPosition="right"
               delayMs={400}
               social={{
-                youtube: "https://www.youtube.com/@piyushgargdev",
-                twitter: "https://x.com/piyushgarg_dev",
-                linkedin: "https://www.linkedin.com/in/piyushgarg195/",
-                github: "https://github.com/piyushgarg-dev",
+                linkedin: "https://www.linkedin.com/search/results/all/?keywords=Sai%20Manjith%20Paripelli",
+                github: "https://github.com/wtfear",
               }}
             />
           </div>

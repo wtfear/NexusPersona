@@ -11,14 +11,23 @@ const openai = new OpenAI({
  * Loads a persona JSON file from /app/api/person/{id}.json
  */
 async function loadPersona(id) {
-  const personaPath = path.join(process.cwd(), "app", "api", "person", `${id}.json`);
-  const raw = await fs.readFile(personaPath, "utf8");
-  return JSON.parse(raw);
+  let targetId = id;
+  if (targetId === "hitesh") targetId = "pavan";
+  if (targetId === "piyush") targetId = "sai";
+  let personaPath = path.join(process.cwd(), "app", "api", "person", `${targetId}.json`);
+  try {
+    const raw = await fs.readFile(personaPath, "utf8");
+    return JSON.parse(raw);
+  } catch {
+    personaPath = path.join(process.cwd(), "app", "api", "person", "pavan.json");
+    const raw = await fs.readFile(personaPath, "utf8");
+    return JSON.parse(raw);
+  }
 }
 
 export async function POST(request) {
   try {
-    const { message, person = "hitesh", history = [] } = await request.json();
+    const { message, person = "pavan", history = [] } = await request.json();
 
     const persona = await loadPersona(person);
     const systemParts = [
