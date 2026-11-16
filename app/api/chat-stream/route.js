@@ -25,7 +25,7 @@ async function loadRawPersona(id) {
 
 export async function POST(request) {
   try {
-    const { message, person = "hitesh", history = [] } = await request.json();
+    const { message, person = "pavan", history = [] } = await request.json();
     const persona = await loadRawPersona(person);
 
     const systemParts = `You are to roleplay as this persona. 
