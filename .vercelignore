@@ -1,0 +1,7 @@
+app/
+components/
+lib/
+hooks/
+types/
+styles/
+node_modules/
