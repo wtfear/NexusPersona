@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexusPersona™ | Autonomous Multi-Agent Persona & Behavioral Simulation Engine</title>
+  <meta name="description" content="Simulate complex human decision-making, executive advisory boards, and high-scale synthetic consumer cohorts. Powered by psychometric vectors, epistemic grounding, and zero-leakage enterprise memory.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2306B6D4'><path d='M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            space: {
+              void: '#050711',
+              dark: '#080C1B',
+              card: '#0D1328',
+              border: '#1A2447',
+              muted: '#24305E'
+            },
+            cyber: {
+              cyan: '#06B6D4',
+              cyanHover: '#22D3EE',
+              violet: '#8B5CF6',
+              violetHover: '#A855F7',
+              rose: '#EC4899',
+              amber: '#F59E0B'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #050711;
+      color: #E2E8F0;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    }
+    .mesh-glow {
+      background: radial-gradient(circle at 50% -20%, rgba(6, 182, 212, 0.18) 0%, rgba(139, 92, 246, 0.12) 35%, rgba(5, 7, 17, 0) 75%);
+    }
+    .card-gradient {
+      background: linear-gradient(135deg, rgba(13, 19, 40, 0.85) 0%, rgba(8, 12, 27, 0.95) 100%);
+      border: 1px solid rgba(26, 36, 71, 0.9);
+      backdrop-filter: blur(12px);
+    }
+    .card-hover:hover {
+      border-color: rgba(6, 182, 212, 0.6);
+      box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.25);
+    }
+    .neon-cyan-text {
+      background: linear-gradient(135deg, #22D3EE 0%, #06B6D4 50%, #8B5CF6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .badge-pulse {
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #080C1B;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #1A2447;
+      border-radius: 3px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #06B6D4;
+    }
+  </style>
+</head>
+<body class="selection:bg-cyber-cyan selection:text-space-void font-sans antialiased">
+
+  <!-- TOP ANNOUNCEMENT BANNER -->
+  <div class="bg-gradient-to-r from-space-card via-space-border to-space-card border-b border-space-border text-xs py-2 px-4 text-center font-mono">
+    <span class="inline-flex items-center gap-2 text-slate-300">
+      <span class="w-2 h-2 rounded-full bg-cyber-cyan animate-pulse"></span>
+      <span class="text-cyber-cyan font-semibold">NexusPersona™ v4.2 Cognitive Engine:</span>
+      Autonomous Synthetic User Cohorts & Multi-Agent Boardroom Deliberation.
+      <a href="#demo" class="text-white hover:text-cyber-cyan underline font-bold ml-2">Try Live Persona Studio &rarr;</a>
+    </span>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-space-void/90 backdrop-blur-md border-b border-space-border/70">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyber-cyan via-cyber-violet to-cyber-rose p-[1px] shadow-lg shadow-cyber-cyan/20">
+          <div class="w-full h-full bg-space-dark rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5">
+            Nexus<span class="text-cyber-cyan">Persona</span><span class="text-xs text-cyber-violet font-mono font-bold px-1.5 py-0.5 rounded bg-cyber-violet/10 border border-cyber-violet/30">AI</span>
+          </span>
+          <span class="text-[10px] text-slate-400 font-mono block tracking-wider uppercase">Autonomous Behavioral Engine</span>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#architecture" class="hover:text-cyber-cyan transition-colors">Cognitive Architecture</a>
+        <a href="#demo" class="hover:text-cyber-cyan transition-colors">Persona Studio</a>
+        <a href="#roi" class="hover:text-cyber-cyan transition-colors">Enterprise ROI</a>
+        <a href="#testimonials" class="hover:text-cyber-cyan transition-colors">Client Outcomes</a>
+        <a href="#contact" class="hover:text-cyber-cyan transition-colors">Inquiries</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="#demo" class="hidden sm:inline-flex items-center gap-2 text-xs font-mono font-semibold px-4 py-2.5 rounded-lg border border-space-border hover:border-cyber-cyan/50 text-slate-200 hover:text-white transition-all bg-space-card/60">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+          Live Studio
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-2 text-xs font-semibold px-5 py-2.5 rounded-lg bg-gradient-to-r from-cyber-cyan to-cyber-violet hover:from-cyber-cyanHover hover:to-cyber-violetHover text-space-void font-bold shadow-lg shadow-cyber-cyan/25 transition-all">
+          Deploy Engine &rarr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-24 pb-20 overflow-hidden mesh-glow">
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+      
+      <!-- Trust Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-space-border bg-space-card/90 text-xs text-slate-300 mb-8 backdrop-blur">
+        <span class="w-2 h-2 rounded-full bg-cyber-cyan badge-pulse"></span>
+        <span class="font-mono text-cyber-cyan font-bold">SOVEREIGN AGENT SYNTHESIS</span>
+        <span class="text-slate-500">|</span>
+        <span>Zero Training Data Leakage</span>
+        <span class="text-slate-500">|</span>
+        <span class="font-mono text-slate-400">wtfearb@gmail.com</span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.1] mb-6">
+        Autonomous Multi-Agent <br class="hidden sm:inline">
+        <span class="neon-cyan-text">Persona & Behavioral Simulation</span> Engine
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10">
+        Simulate complex human decision-making, adversarial executive boards, and high-scale consumer cohorts. Replace months of costly focus groups and advisory panels with mathematically grounded, psychometrically calibrated cognitive agents.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <a href="#demo" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyber-cyan via-teal-400 to-cyber-violet text-space-void font-bold text-base shadow-xl shadow-cyber-cyan/20 hover:scale-[1.02] transition-transform flex items-center justify-center gap-3">
+          <svg class="w-5 h-5 text-space-void" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          Test Live Persona Studio
+        </a>
+        <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-space-border bg-space-card/80 hover:bg-space-card hover:border-cyber-cyan/50 text-white font-semibold text-base transition-all flex items-center justify-center gap-2">
+          <svg class="w-5 h-5 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          Schedule Executive Briefing
+        </a>
+      </div>
+
+      <!-- Telemetry Metric Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 border-t border-space-border/60 text-left">
+        <div class="p-4 rounded-xl bg-space-card/40 border border-space-border/60">
+          <div class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1">Synthesized Personas</div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">50,000+</div>
+          <div class="text-[11px] text-cyber-cyan mt-1 flex items-center gap-1 font-mono">
+            <span>↑ Active Calibrated Profiles</span>
+          </div>
+        </div>
+        <div class="p-4 rounded-xl bg-space-card/40 border border-space-border/60">
+          <div class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1">Deliberation Turn</div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">&lt; 18 ms</div>
+          <div class="text-[11px] text-emerald-400 mt-1 flex items-center gap-1 font-mono">
+            <span>● Edge Distributed In-Memory</span>
+          </div>
+        </div>
+        <div class="p-4 rounded-xl bg-space-card/40 border border-space-border/60">
+          <div class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1">Psychometric Fidelity</div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">99.4%</div>
+          <div class="text-[11px] text-cyber-violet mt-1 flex items-center gap-1 font-mono">
+            <span>★ Big Five & MBTI Grounded</span>
+          </div>
+        </div>
+        <div class="p-4 rounded-xl bg-space-card/40 border border-space-border/60">
+          <div class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1">Research Cutover ROI</div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">$450K+</div>
+          <div class="text-[11px] text-amber-400 mt-1 flex items-center gap-1 font-mono">
+            <span>⚡ Replaced Traditional Panels</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ARCHITECTURAL SERVICE PILLARS -->
+  <section id="architecture" class="py-24 border-t border-space-border bg-space-dark/50">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyber-cyan/10 border border-cyber-cyan/30 text-cyber-cyan text-xs font-mono uppercase tracking-wider mb-4">
+          Core Engine Architecture
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+          Four Pillars of Deterministic Behavioral Simulation
+        </h2>
+        <p class="text-slate-400 text-base leading-relaxed">
+          Standard LLM system prompts drift and hallucinate. NexusPersona constructs sovereign cognitive profiles with mathematical bias calibration, epistemic consistency, and enterprise security.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="card-gradient rounded-2xl p-8 card-hover transition-all relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/30 flex items-center justify-center mb-6 text-cyber-cyan">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <div class="text-xs font-mono text-cyber-cyan font-semibold uppercase tracking-wider mb-2">Pillar 01 // Epistemic Grounding</div>
+          <h3 class="text-xl font-bold text-white mb-3">Psychometric & Trait Calibration Vectoring</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Compile real-world expert personas using multi-dimensional OCEAN (Big Five) psychometric traits, calibrated risk preferences, cognitive biases, and domain-specific vernacular. Personas maintain exact behavioral constraints across hundreds of continuous turns.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-slate-300 border-t border-space-border/60 pt-4">
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-cyan">▸</span> Big Five & Jungian Psychometric Alignment
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-cyan">▸</span> Quantitative Risk-Tolerance Constraints
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-cyan">▸</span> Specialized Domain Nomenclature Graph
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="card-gradient rounded-2xl p-8 card-hover transition-all relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-cyber-violet/10 border border-cyber-violet/30 flex items-center justify-center mb-6 text-cyber-violet">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+          </div>
+          <div class="text-xs font-mono text-cyber-violet font-semibold uppercase tracking-wider mb-2">Pillar 02 // Multi-Agent Deliberation</div>
+          <h3 class="text-xl font-bold text-white mb-3">Autonomous Dialectic Boardroom Simulation</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Pit opposing executive perspectives against one another before committing millions to capital allocation. Simulate cross-examination between CISO (Security), CFO (Capital Preservation), CTO (Scalability), and CMO (Growth) in an automated consensus round.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-slate-300 border-t border-space-border/60 pt-4">
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-violet">▸</span> Adversarial Red-Teaming & Stress-Testing
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-violet">▸</span> Synthesized Dialectic Consensus Summaries
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-violet">▸</span> Blind Voting & Escalation Protocols
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="card-gradient rounded-2xl p-8 card-hover transition-all relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-cyber-rose/10 border border-cyber-rose/30 flex items-center justify-center mb-6 text-cyber-rose">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <div class="text-xs font-mono text-cyber-rose font-semibold uppercase tracking-wider mb-2">Pillar 03 // Synthetic User Testing</div>
+          <h3 class="text-xl font-bold text-white mb-3">Mass-Parallel Consumer & Segment Cohorts</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Instantly spin up 5,000 distinct demographic, socio-economic, and behavioral synthetic users. Run pricing sensitivity analysis (Van Westendorp), onboarding drop-off audits, and landing copy A/B tests within seconds, zero survey fatigue.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-slate-300 border-t border-space-border/60 pt-4">
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-rose">▸</span> High-Throughput Parallel Persona Execution
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-rose">▸</span> Price Elasticity & Willingness-to-Pay Testing
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-rose">▸</span> Churn Trigger & Friction Discovery
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="card-gradient rounded-2xl p-8 card-hover transition-all relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-cyber-amber/10 border border-cyber-amber/30 flex items-center justify-center mb-6 text-cyber-amber">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+          </div>
+          <div class="text-xs font-mono text-cyber-amber font-semibold uppercase tracking-wider mb-2">Pillar 04 // Enterprise Sovereignty</div>
+          <h3 class="text-xl font-bold text-white mb-3">Private Memory Graphs & Zero Model Leakage</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Enterprise proprietary datasets remain strictly isolated in zero-retention memory shards. RAG embeddings ground each persona in internal company memos, balance sheets, and patents without exposing confidential IP to public model training sets.
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-slate-300 border-t border-space-border/60 pt-4">
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-amber">▸</span> Zero-Data-Retention Sovereign Enclaves
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-amber">▸</span> Deterministic Replay with Seed Locking
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-cyber-amber">▸</span> Full Audit Logs & Epistemic Reasoning Chains
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE LIVE PERSONA DELIBERATION STUDIO -->
+  <section id="demo" class="py-24 border-t border-space-border relative">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyber-cyan/10 border border-cyber-cyan/30 text-cyber-cyan text-xs font-mono uppercase tracking-wider mb-3">
+          Interactive Operational Sandbox
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+          Experience Live Persona Deliberation
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Select an executive persona, choose or enter a real enterprise dilemma, and trigger the cognitive reasoning engine. Notice the distinct mental models, risk thresholds, and vocabulary.
+        </p>
+      </div>
+
+      <!-- Studio Container -->
+      <div class="card-gradient rounded-3xl border border-space-border shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+        
+        <!-- Left: Persona Selector & Trait Matrix (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-8 border-b lg:border-b-0 lg:border-r border-space-border bg-space-dark/80">
+          <div class="flex items-center justify-between mb-6">
+            <span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">Select Active Persona</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyber-cyan/10 text-cyber-cyan border border-cyber-cyan/30">4 Pre-Calibrated</span>
+          </div>
+
+          <!-- Persona Selector Buttons -->
+          <div class="space-y-3 mb-8" id="personaButtonGroup">
+            
+            <button onclick="selectPersona('elena')" id="btn-elena" class="w-full text-left p-4 rounded-xl border border-cyber-cyan bg-space-card/80 transition-all flex items-start gap-4">
+              <div class="w-11 h-11 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center font-bold text-red-400 font-mono text-sm shrink-0">
+                EV
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-sm font-bold text-white">Elena Vance</h4>
+                  <span class="text-[10px] font-mono text-red-400 bg-red-500/10 px-1.5 py-0.5 rounded">Risk-Averse</span>
+                </div>
+                <p class="text-xs text-slate-400 truncate">Chief Information Security Officer (Zero-Trust)</p>
+              </div>
+            </button>
+
+            <button onclick="selectPersona('marcus')" id="btn-marcus" class="w-full text-left p-4 rounded-xl border border-space-border hover:border-slate-600 bg-space-card/40 transition-all flex items-start gap-4">
+              <div class="w-11 h-11 rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/30 flex items-center justify-center font-bold text-cyber-cyan font-mono text-sm shrink-0">
+                MC
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-sm font-bold text-slate-200">Marcus Chen</h4>
+                  <span class="text-[10px] font-mono text-cyber-cyan bg-cyber-cyan/10 px-1.5 py-0.5 rounded">Blitzscaler</span>
+                </div>
+                <p class="text-xs text-slate-400 truncate">Venture Partner & Growth Strategist</p>
+              </div>
+            </button>
+
+            <button onclick="selectPersona('aris')" id="btn-aris" class="w-full text-left p-4 rounded-xl border border-space-border hover:border-slate-600 bg-space-card/40 transition-all flex items-start gap-4">
+              <div class="w-11 h-11 rounded-lg bg-cyber-violet/10 border border-cyber-violet/30 flex items-center justify-center font-bold text-cyber-violet font-mono text-sm shrink-0">
+                AT
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-sm font-bold text-slate-200">Dr. Aris Thorne</h4>
+                  <span class="text-[10px] font-mono text-cyber-violet bg-cyber-violet/10 px-1.5 py-0.5 rounded">Formal Proofs</span>
+                </div>
+                <p class="text-xs text-slate-400 truncate">DeepTech Cryptographer & Systems Lead</p>
+              </div>
+            </button>
+
+            <button onclick="selectPersona('sophia')" id="btn-sophia" class="w-full text-left p-4 rounded-xl border border-space-border hover:border-slate-600 bg-space-card/40 transition-all flex items-start gap-4">
+              <div class="w-11 h-11 rounded-lg bg-cyber-rose/10 border border-cyber-rose/30 flex items-center justify-center font-bold text-cyber-rose font-mono text-sm shrink-0">
+                SM
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-sm font-bold text-slate-200">Sophia Martinez</h4>
+                  <span class="text-[10px] font-mono text-cyber-rose bg-cyber-rose/10 px-1.5 py-0.5 rounded">Behaviorist</span>
+                </div>
+                <p class="text-xs text-slate-400 truncate">Gen-Z Consumer & Friction Psychologist</p>
+              </div>
+            </button>
+
+          </div>
+
+          <!-- Psychometric Trait Vector Radar -->
+          <div class="p-4 rounded-xl bg-space-card/70 border border-space-border">
+            <div class="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider mb-3 flex items-center justify-between">
+              <span>Psychometric Trait Vectors</span>
+              <span id="activeTraitSeed" class="text-cyber-cyan text-[10px]">SEED: #EV-9821</span>
+            </div>
+            
+            <div class="space-y-2.5 text-xs font-mono">
+              <div>
+                <div class="flex justify-between text-slate-400 mb-1">
+                  <span>Risk Aversion</span>
+                  <span id="traitRiskVal" class="text-white font-bold">96%</span>
+                </div>
+                <div class="w-full bg-space-dark rounded-full h-1.5 overflow-hidden">
+                  <div id="traitRiskBar" class="bg-red-400 h-1.5 rounded-full transition-all duration-500" style="width: 96%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-slate-400 mb-1">
+                  <span>Epistemic Rigor</span>
+                  <span id="traitEpistemicVal" class="text-white font-bold">92%</span>
+                </div>
+                <div class="w-full bg-space-dark rounded-full h-1.5 overflow-hidden">
+                  <div id="traitEpistemicBar" class="bg-cyber-cyan h-1.5 rounded-full transition-all duration-500" style="width: 92%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-slate-400 mb-1">
+                  <span>Growth Velocity Bias</span>
+                  <span id="traitGrowthVal" class="text-white font-bold">14%</span>
+                </div>
+                <div class="w-full bg-space-dark rounded-full h-1.5 overflow-hidden">
+                  <div id="traitGrowthBar" class="bg-amber-400 h-1.5 rounded-full transition-all duration-500" style="width: 14%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-slate-400 mb-1">
+                  <span>UX & Empathy Focus</span>
+                  <span id="traitEmpathyVal" class="text-white font-bold">28%</span>
+                </div>
+                <div class="w-full bg-space-dark rounded-full h-1.5 overflow-hidden">
+                  <div id="traitEmpathyBar" class="bg-cyber-rose h-1.5 rounded-full transition-all duration-500" style="width: 28%"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right: Dilemma Formulation & Live Execution Console (7 cols) -->
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between bg-space-card/30">
+          
+          <div>
+            <!-- Scenario Presets -->
+            <div class="mb-4">
+              <label class="block text-xs font-mono font-bold text-slate-300 uppercase tracking-wider mb-2">
+                Enterprise Strategic Dilemma
+              </label>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <button onclick="setScenario('opensource')" class="text-xs px-3 py-1.5 rounded-lg border border-space-border bg-space-dark hover:border-cyber-cyan/50 text-slate-300 hover:text-white transition-all font-mono">
+                  #1 Open-Source Core Engine
+                </button>
+                <button onclick="setScenario('pricing')" class="text-xs px-3 py-1.5 rounded-lg border border-space-border bg-space-dark hover:border-cyber-cyan/50 text-slate-300 hover:text-white transition-all font-mono">
+                  #2 Immediate 3x Price Cutover
+                </button>
+                <button onclick="setScenario('deprecate')" class="text-xs px-3 py-1.5 rounded-lg border border-space-border bg-space-dark hover:border-cyber-cyan/50 text-slate-300 hover:text-white transition-all font-mono">
+                  #3 Sunset Legacy v1 API
+                </button>
+              </div>
+
+              <div class="relative">
+                <textarea id="dilemmaInput" rows="3" class="w-full bg-space-dark border border-space-border rounded-xl p-3 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyber-cyan transition-colors font-mono resize-none" placeholder="Enter custom corporate decision, architectural question, or product proposition...">Should we open-source our core algorithmic pipeline to win developer mindshare, or keep it closed-source proprietary IP?</textarea>
+              </div>
+            </div>
+
+            <!-- Run Button -->
+            <div class="flex items-center justify-between mb-6">
+              <button onclick="runDeliberation()" id="runDeliberationBtn" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyber-cyan to-cyber-violet hover:from-cyber-cyanHover hover:to-cyber-violetHover text-space-void font-bold text-sm flex items-center gap-2 shadow-lg shadow-cyber-cyan/20 transition-all">
+                <svg class="w-4 h-4 text-space-void" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                Simulate Deliberation Step
+              </button>
+              <span id="execLatency" class="text-xs font-mono text-slate-400">Inference: <span class="text-cyber-cyan">Ready</span></span>
+            </div>
+
+            <!-- Live Deliberation Output Window -->
+            <div class="rounded-xl border border-space-border bg-space-dark/95 p-5 font-mono text-xs">
+              <div class="flex items-center justify-between border-b border-space-border/60 pb-3 mb-3">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-cyber-cyan" id="deliberationStatusDot"></span>
+                  <span class="font-bold text-slate-200" id="outputPersonaName">Elena Vance (CISO)</span>
+                </div>
+                <span id="outputVerdictBadge" class="text-[10px] px-2 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/30 font-bold uppercase">
+                  VERDICT: HARD VETO / CRITICAL RISK
+                </span>
+              </div>
+
+              <!-- Output Body -->
+              <div id="deliberationBody" class="text-slate-300 leading-relaxed min-h-[140px] custom-scrollbar">
+                "Under zero-trust governance, releasing our core algorithmic pipeline exposes sovereign cryptographic attack surfaces to unauthorized reverse-engineering. Developer mindshare does not mitigate compliance exposure under SOC2 Type II or ISO 27001. Recommendation: Maintain air-gapped core; release sanitized SDK stubs with rate-limited sandboxed inference endpoints only."
+              </div>
+
+              <!-- Reasoning Metadata Footer -->
+              <div class="mt-4 pt-3 border-t border-space-border/60 flex flex-wrap items-center justify-between text-[11px] text-slate-400">
+                <span id="metaCognition">Cognitive Bias: <span class="text-slate-200">Threat Amplification</span></span>
+                <span id="metaConfidence">Epistemic Certainty: <span class="text-cyber-cyan">98.2%</span></span>
+                <span id="metaTokenCount">Tokens: <span class="text-slate-200">124</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 text-[11px] text-slate-500 font-mono text-center">
+            Zero-model training guarantee: All telemetry processed through ephemeral sandboxed inference.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ENTERPRISE ROI & INCUMBENT CUTOVER MATRIX -->
+  <section id="roi" class="py-24 border-t border-space-border bg-space-dark/40">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono uppercase tracking-wider mb-3">
+          Economic Unit Analysis
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+          Replace $450,000 in Disjointed Consulting & Surveys
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          How NexusPersona outperforms traditional focus groups and fragile vanilla LLM system prompts across key enterprise metrics.
+        </p>
+      </div>
+
+      <!-- Comparison Matrix Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse border border-space-border bg-space-card/50 rounded-2xl overflow-hidden font-mono text-xs">
+          <thead>
+            <tr class="border-b border-space-border bg-space-dark text-slate-400 uppercase text-[11px]">
+              <th class="p-4 sm:p-5">Strategic Capability</th>
+              <th class="p-4 sm:p-5">Traditional Focus Groups</th>
+              <th class="p-4 sm:p-5">Generic LLM Prompts</th>
+              <th class="p-4 sm:p-5 text-cyber-cyan bg-cyber-cyan/5">NexusPersona™ Engine</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-space-border/60 text-slate-300">
+            <tr>
+              <td class="p-4 sm:p-5 font-bold text-white">Cohort Turnaround Time</td>
+              <td class="p-4 sm:p-5 text-red-400">6 – 8 Weeks</td>
+              <td class="p-4 sm:p-5 text-amber-400">1 – 2 Hours</td>
+              <td class="p-4 sm:p-5 text-cyber-cyan font-bold bg-cyber-cyan/5">&lt; 4 Seconds (Instantaneous)</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:p-5 font-bold text-white">Sample Population Scale</td>
+              <td class="p-4 sm:p-5 text-slate-400">12 – 24 Participants</td>
+              <td class="p-4 sm:p-5 text-slate-400">1 Generic Bot</td>
+              <td class="p-4 sm:p-5 text-cyber-cyan font-bold bg-cyber-cyan/5">5,000+ Parallel Personas</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:p-5 font-bold text-white">Psychometric Trait Drift</td>
+              <td class="p-4 sm:p-5 text-amber-400">Subjective & Unrepeatable</td>
+              <td class="p-4 sm:p-5 text-red-400">Severe Drift after 5 Turns</td>
+              <td class="p-4 sm:p-5 text-cyber-cyan font-bold bg-cyber-cyan/5">Zero Drift (Vector Constrained)</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:p-5 font-bold text-white">Adversarial Red-Teaming</td>
+              <td class="p-4 sm:p-5 text-slate-400">Polite / Hawthorne Effect</td>
+              <td class="p-4 sm:p-5 text-red-400">Sycophantic Agreement</td>
+              <td class="p-4 sm:p-5 text-cyber-cyan font-bold bg-cyber-cyan/5">Calibrated Dialectic Opposition</td>
+            </tr>
+            <tr>
+              <td class="p-4 sm:p-5 font-bold text-white">Annual Cost Footprint</td>
+              <td class="p-4 sm:p-5 text-red-400">$350,000 – $600,000</td>
+              <td class="p-4 sm:p-5 text-amber-400">$35,000 / team seat</td>
+              <td class="p-4 sm:p-5 text-emerald-400 font-bold bg-cyber-cyan/5">$0 Serverless Edge Footprint</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ROI Banner -->
+      <div class="mt-8 p-6 rounded-2xl bg-gradient-to-r from-space-card via-space-border/50 to-space-card border border-space-border flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <h4 class="text-base font-bold text-white mb-1">Calculate Your Tailored Enterprise Migration Savings</h4>
+          <p class="text-xs text-slate-400">Direct integration audit with our quantitative decision engineering team at <a href="mailto:wtfearb@gmail.com" class="text-cyber-cyan hover:underline">wtfearb@gmail.com</a></p>
+        </div>
+        <a href="#contact" class="px-5 py-2.5 rounded-lg bg-cyber-cyan hover:bg-cyber-cyanHover text-space-void font-bold text-xs uppercase tracking-wider font-mono shrink-0">
+          Request Cost Model &rarr;
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AUTHENTIC ENTERPRISE TESTIMONIALS -->
+  <section id="testimonials" class="py-24 border-t border-space-border">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyber-violet/10 border border-cyber-violet/30 text-cyber-violet text-xs font-mono uppercase tracking-wider mb-3">
+          Verified Field Deployments
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+          Trusted by Decision Scientists & Strategic Executives
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Read how institutional operators stress-test major M&A moves, product pivots, and compliance strategies with sovereign persona cohorts.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Testimonial 1 -->
+        <div class="card-gradient rounded-2xl p-8 border border-space-border card-hover transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
+              ★★★★★
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+              "We replaced three legacy consulting firms conducting quarterly consumer focus groups with NexusPersona. In our last retail tier launch, we ran 3,000 synthetic micro-personas across 14 geographic clusters and predicted our month-one retention drop within 1.2% variance. It paid for itself on day one."
+            </p>
+          </div>
+          <div class="flex items-center gap-4 pt-4 border-t border-space-border/60">
+            <div class="w-11 h-11 rounded-full bg-cyber-cyan/10 border border-cyber-cyan/30 flex items-center justify-center font-bold text-cyber-cyan font-mono text-sm">
+              VP
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Dr. Vikram Patel</div>
+              <div class="text-xs text-slate-400">Head of Decision Sciences, Global Fintech Dynamics</div>
+              <div class="text-[10px] text-cyber-cyan font-mono mt-0.5">Verified $340K Annualized Savings</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="card-gradient rounded-2xl p-8 border border-space-border card-hover transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
+              ★★★★★
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+              "Before pitching our Series C valuation to external venture partners, our executive team ran 25 simulated board debates inside NexusPersona's adversarial chamber. The simulated VC persona anticipated three fatal questions regarding our gross margins that we solved prior to the actual pitch."
+            </p>
+          </div>
+          <div class="flex items-center gap-4 pt-4 border-t border-space-border/60">
+            <div class="w-11 h-11 rounded-full bg-cyber-violet/10 border border-cyber-violet/30 flex items-center justify-center font-bold text-cyber-violet font-mono text-sm">
+              CB
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Claire Beauchamp</div>
+              <div class="text-xs text-slate-400">Chief Strategy Officer, Aethelgard Media Group</div>
+              <div class="text-[10px] text-cyber-violet font-mono mt-0.5">Raised $48M Round with Zero Term Sheet Pushback</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="card-gradient rounded-2xl p-8 border border-space-border card-hover transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
+              ★★★★★
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+              "Vanilla LLMs always hallucinate polite agreement when you ask them to critique a prototype. NexusPersona's Big Five vector tuning allowed us to construct deeply skeptical, compliance-obsessed healthcare personas who pointed out critical regulatory landmines in our patient intake flow."
+            </p>
+          </div>
+          <div class="flex items-center gap-4 pt-4 border-t border-space-border/60">
+            <div class="w-11 h-11 rounded-full bg-cyber-rose/10 border border-cyber-rose/30 flex items-center justify-center font-bold text-cyber-rose font-mono text-sm">
+              TL
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Tomas Lindqvist</div>
+              <div class="text-xs text-slate-400">VP of Product Innovation, Nordea Ventures</div>
+              <div class="text-[10px] text-cyber-rose font-mono mt-0.5">Eliminated 6 Months of Dead-End Prototyping</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="card-gradient rounded-2xl p-8 border border-space-border card-hover transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
+              ★★★★★
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+              "The epistemic consistency of simulated clinical advisory panels was indistinguishable from live Key Opinion Leaders. Running simulations with private memory graphs prevented proprietary drug delivery formulas from leaking into third-party AI training pipelines."
+            </p>
+          </div>
+          <div class="flex items-center gap-4 pt-4 border-t border-space-border/60">
+            <div class="w-11 h-11 rounded-full bg-cyber-amber/10 border border-cyber-amber/30 flex items-center justify-center font-bold text-cyber-amber font-mono text-sm">
+              ER
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Elena Rostova</div>
+              <div class="text-xs text-slate-400">Principal AI Architect, Synapse BioTech</div>
+              <div class="text-[10px] text-cyber-amber font-mono mt-0.5">100% Zero-Leakage Architecture Verified</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT & LEAD CAPTURE SECTION -->
+  <section id="contact" class="py-24 border-t border-space-border bg-space-dark/60 relative">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <div class="card-gradient rounded-3xl p-8 sm:p-12 border border-space-border shadow-2xl relative overflow-hidden">
+        
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyber-cyan/10 border border-cyber-cyan/30 text-cyber-cyan text-xs font-mono uppercase tracking-wider mb-4">
+            Enterprise Engagement
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+            Deploy Sovereign Persona Intelligence
+          </h2>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Directly connect with our systems architecture team to integrate custom psychometric profiles, private memory enclaves, and enterprise API access.
+          </p>
+        </div>
+
+        <!-- Official Contact Box -->
+        <div class="p-4 rounded-xl bg-space-dark border border-space-border flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/30 flex items-center justify-center text-cyber-cyan">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="text-xs text-slate-400 font-mono">Official Enterprise Contact:</div>
+              <a href="mailto:wtfearb@gmail.com" class="text-base font-bold text-white hover:text-cyber-cyan font-mono transition-colors">
+                wtfearb@gmail.com
+              </a>
+            </div>
+          </div>
+          <a href="mailto:wtfearb@gmail.com?subject=NexusPersona%20Enterprise%20Inquiry" class="px-5 py-2.5 rounded-lg bg-cyber-cyan/20 hover:bg-cyber-cyan/30 text-cyber-cyan border border-cyber-cyan/40 text-xs font-mono font-bold transition-all">
+            Open Direct Email &rarr;
+          </a>
+        </div>
+
+        <!-- Lead Form -->
+        <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-400 uppercase mb-1">Your Name</label>
+              <input type="text" id="contactName" required class="w-full bg-space-dark border border-space-border rounded-xl p-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyber-cyan font-sans" placeholder="e.g. Dr. Jordan Hayes">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-400 uppercase mb-1">Corporate Email</label>
+              <input type="email" id="contactEmail" required class="w-full bg-space-dark border border-space-border rounded-xl p-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyber-cyan font-sans" placeholder="jordan@enterprise.com">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-400 uppercase mb-1">Organization & Title</label>
+              <input type="text" id="contactOrg" required class="w-full bg-space-dark border border-space-border rounded-xl p-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyber-cyan font-sans" placeholder="Global Dynamics / VP Strategy">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-400 uppercase mb-1">Primary Simulation Goal</label>
+              <select id="contactGoal" class="w-full bg-space-dark border border-space-border rounded-xl p-3 text-sm text-slate-200 focus:outline-none focus:border-cyber-cyan font-sans">
+                <option value="board">Executive Boardroom Deliberation</option>
+                <option value="testing">Synthetic Consumer User Testing</option>
+                <option value="advisory">Key Opinion Leader & Advisory AI</option>
+                <option value="sovereign">Sovereign On-Premise Deployment</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono text-slate-400 uppercase mb-1">Project Details / Requirements</label>
+            <textarea id="contactNotes" rows="3" class="w-full bg-space-dark border border-space-border rounded-xl p-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyber-cyan font-sans resize-none" placeholder="Detail your scale, specific personas required, or integration timeline..."></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyber-cyan via-teal-400 to-cyber-violet hover:from-cyber-cyanHover hover:to-cyber-violetHover text-space-void font-bold text-base shadow-xl shadow-cyber-cyan/20 transition-all font-sans">
+            Transmit Request to Architecture Desk (wtfearb@gmail.com)
+          </button>
+        </form>
+
+        <div id="contactSuccessMsg" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono text-center">
+          ✅ Inquiry logged successfully. Routing directly to engineering lead at <strong>wtfearb@gmail.com</strong>. We will reply within 4 business hours.
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-space-border bg-space-void py-12 text-slate-400 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded-lg bg-cyber-cyan/20 border border-cyber-cyan/40 flex items-center justify-center text-cyber-cyan font-bold text-xs">
+          NP
+        </div>
+        <div>
+          <span class="text-white font-bold">NexusPersona™</span>
+          <span class="text-slate-500 ml-2">© 2026 wtfear Enterprise Systems.</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <span>Contact: <a href="mailto:wtfearb@gmail.com" class="text-cyber-cyan hover:underline font-bold">wtfearb@gmail.com</a></span>
+        <span class="text-slate-600">|</span>
+        <a href="#architecture" class="hover:text-white transition-colors">Architecture</a>
+        <a href="#demo" class="hover:text-white transition-colors">Studio</a>
+        <a href="#roi" class="hover:text-white transition-colors">ROI Matrix</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- CLIENT-SIDE LOGIC -->
+  <script>
+    // Persona Profiles Registry
+    const personas = {
+      elena: {
+        name: "Elena Vance",
+        title: "Chief Information Security Officer (Zero-Trust)",
+        tag: "Risk-Averse",
+        seed: "#EV-9821",
+        risk: 96,
+        epistemic: 92,
+        growth: 14,
+        empathy: 28,
+        riskColor: "bg-red-400",
+        verdict: "VERDICT: HARD VETO / CRITICAL RISK",
+        verdictClass: "bg-red-500/20 text-red-400 border-red-500/30",
+        bias: "Threat Amplification",
+        certainty: "98.2%",
+        responses: {
+          opensource: "Under zero-trust governance, releasing our core algorithmic pipeline exposes sovereign cryptographic attack surfaces to unauthorized reverse-engineering. Developer mindshare does not mitigate compliance exposure under SOC2 Type II or ISO 27001. Recommendation: Maintain air-gapped core; release sanitized SDK stubs with rate-limited sandboxed inference endpoints only.",
+          pricing: "A sudden 300% price cutover creates severe contract breach liability and churn risks across enterprise accounts with multi-year SLAs. You cannot force enterprise tiering without a grandfathered migration grace period of at least 180 days and SOC2 indemnification clauses.",
+          deprecate: "Deprecating v1 APIs in 14 days is reckless. Critical enterprise banking and healthcare pipelines rely on predictable ABI stability. You risk catastrophic service disruption and lawsuit liability. Minimum acceptable notice is 90 days with backward-compatible proxy fallback."
+        }
+      },
+      marcus: {
+        name: "Marcus Chen",
+        title: "Venture Partner & Growth Strategist",
+        tag: "Blitzscaler",
+        seed: "#MC-4019",
+        risk: 22,
+        epistemic: 78,
+        growth: 98,
+        empathy: 45,
+        riskColor: "bg-emerald-400",
+        verdict: "VERDICT: AGGRESSIVE GREENLIGHT / HIGH ROI",
+        verdictClass: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
+        bias: "Scale-At-All-Costs",
+        certainty: "94.6%",
+        responses: {
+          opensource: "100% greenlight. The modern SaaS playbook proves that developer distribution beats proprietary secrecy every single time. Open-source the core pipeline, capture 80% bottom-up developer market share, and monetize enterprise hosting, managed SLA clusters, and telemetry governance. Look at Redis and Databricks.",
+          pricing: "Execute immediately. The bottom 40% of low-margin customers consume 75% of your customer success overhead. Re-anchor your positioning around institutional enterprise accounts where ACVs exceed $120,000. Your net retention will accelerate by 35% within two quarters.",
+          deprecate: "Ship it. Maintaining legacy technical debt costs us 20% in velocity drag. The users still on v1 are low-LTV legacy baggage who will never upgrade unless compelled by hard cutoffs. Reallocate those engineers to our high-margin v2 features."
+        }
+      },
+      aris: {
+        name: "Dr. Aris Thorne",
+        title: "DeepTech Cryptographer & Systems Lead",
+        tag: "Formal Proofs",
+        seed: "#AT-1104",
+        risk: 75,
+        epistemic: 99,
+        growth: 30,
+        empathy: 20,
+        riskColor: "bg-cyber-violet",
+        verdict: "VERDICT: CONDITIONAL CONDITIONAL / FORMAL AUDIT REQ",
+        verdictClass: "bg-cyber-violet/20 text-cyber-violet border-cyber-violet/30",
+        bias: "Theoretical Rigor & Verification",
+        certainty: "99.8%",
+        responses: {
+          opensource: "Code openness is scientifically advantageous for peer review, but algorithmic proofs must be formally verified before publication. If our differential privacy mechanisms or zero-knowledge proof bounds contain unverified edge cases, public scrutiny will devalue our patent portfolio. We require a 3-week automated formal verification pass first.",
+          pricing: "Pricing elasticity should be calculated as a function of compute throughput and token density rather than arbitrary seat multipliers. A flat 3x increase without proportional hardware allocation creates uncalibrated SLA disputes. Let us publish a transparent mathematical compute-cost index.",
+          deprecate: "v1 protocol deprecation requires mathematical backward compatibility proofs. If we synthesize a lightweight zero-allocation translation layer in WebAssembly, we can support legacy ABI calls with sub-millisecond overhead while deprecating the physical backend clusters."
+        }
+      },
+      sophia: {
+        name: "Sophia Martinez",
+        title: "Gen-Z Consumer & Friction Psychologist",
+        tag: "Behaviorist",
+        seed: "#SM-6623",
+        risk: 40,
+        epistemic: 85,
+        growth: 82,
+        empathy: 95,
+        riskColor: "bg-cyber-rose",
+        verdict: "VERDICT: UX WARNING / HIGH RETENTION FRICTION",
+        verdictClass: "bg-amber-500/20 text-amber-400 border-amber-500/30",
+        bias: "Empathic Friction Detection",
+        certainty: "91.5%",
+        responses: {
+          opensource: "Developers are humans who demand instant gratification. If you open-source this, the README, 1-command Docker spinup, and Discord community onboarding must feel frictionless. If getting started takes more than 3 minutes, they will publicly roast the project on X and switch to a competitor.",
+          pricing: "A sudden 3x price shock triggers feelings of corporate betrayal. If users perceive you as greedy, they will actively organize community alternatives. Instead, introduce a transparent 'Founder Legacy Pass' and celebrate power users while framing the price shift around exclusive concierge features.",
+          deprecate: "Deprecation without warm emotional framing creates anger and churn. You must provide an automated 1-click migration wizard, a clear interactive timeline widget, and personalized email outreach apologizing for the disruption. Make them feel guided, not abandoned."
+        }
+      }
+    };
+
+    let activePersonaKey = 'elena';
+    let currentScenarioKey = 'opensource';
+
+    function selectPersona(key) {
+      activePersonaKey = key;
+      const p = personas[key];
+
+      // Update button styles
+      ['elena', 'marcus', 'aris', 'sophia'].forEach(k => {
+        const btn = document.getElementById('btn-' + k);
+        if (k === key) {
+          btn.className = "w-full text-left p-4 rounded-xl border border-cyber-cyan bg-space-card/90 transition-all flex items-start gap-4 shadow-lg shadow-cyber-cyan/10";
+          btn.querySelector('h4').className = "text-sm font-bold text-white";
+        } else {
+          btn.className = "w-full text-left p-4 rounded-xl border border-space-border hover:border-slate-600 bg-space-card/40 transition-all flex items-start gap-4";
+          btn.querySelector('h4').className = "text-sm font-bold text-slate-300";
+        }
+      });
+
+      // Update traits
+      document.getElementById('activeTraitSeed').innerText = 'SEED: ' + p.seed;
+      document.getElementById('traitRiskVal').innerText = p.risk + '%';
+      document.getElementById('traitRiskBar').style.width = p.risk + '%';
+      
+      document.getElementById('traitEpistemicVal').innerText = p.epistemic + '%';
+      document.getElementById('traitEpistemicBar').style.width = p.epistemic + '%';
+
+      document.getElementById('traitGrowthVal').innerText = p.growth + '%';
+      document.getElementById('traitGrowthBar').style.width = p.growth + '%';
+
+      document.getElementById('traitEmpathyVal').innerText = p.empathy + '%';
+      document.getElementById('traitEmpathyBar').style.width = p.empathy + '%';
+
+      // Update output persona identity
+      document.getElementById('outputPersonaName').innerText = p.name + ' (' + p.title.split('(')[0].trim() + ')';
+
+      // Trigger deliberation step
+      runDeliberation();
+    }
+
+    function setScenario(scen) {
+      currentScenarioKey = scen;
+      const input = document.getElementById('dilemmaInput');
+      if (scen === 'opensource') {
+        input.value = "Should we open-source our core algorithmic pipeline to win developer mindshare, or keep it closed-source proprietary IP?";
+      } else if (scen === 'pricing') {
+        input.value = "Should we enact an immediate 300% enterprise pricing tiered cutover to filter low-margin customers?";
+      } else if (scen === 'deprecate') {
+        input.value = "Should we deprecate all v1 legacy API endpoints with a 14-day notice to eliminate technical debt?";
+      }
+      runDeliberation();
+    }
+
+    function runDeliberation() {
+      const p = personas[activePersonaKey];
+      const outputBody = document.getElementById('deliberationBody');
+      const verdictBadge = document.getElementById('outputVerdictBadge');
+      const latency = document.getElementById('execLatency');
+      const btn = document.getElementById('runDeliberationBtn');
+      const statusDot = document.getElementById('deliberationStatusDot');
+
+      btn.disabled = true;
+      statusDot.className = "w-2 h-2 rounded-full bg-amber-400 animate-ping";
+      latency.innerHTML = "Inference: <span class='text-amber-400'>Deliberating...</span>";
+      outputBody.innerHTML = "<span class='text-slate-500 italic'>Synthesizing epistemic vectors across cognitive graph...</span>";
+
+      setTimeout(() => {
+        // Pick response text
+        let text = p.responses[currentScenarioKey] || p.responses.opensource;
+        
+        // Typewriter streaming
+        outputBody.innerHTML = "";
+        let i = 0;
+        const speed = 8;
+        function typeWriter() {
+          if (i < text.length) {
+            outputBody.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          } else {
+            btn.disabled = false;
+            statusDot.className = "w-2 h-2 rounded-full bg-cyber-cyan";
+            latency.innerHTML = "Inference: <span class='text-emerald-400'>14.8 ms</span>";
+          }
+        }
+        typeWriter();
+
+        // Update Verdict & Meta
+        verdictBadge.innerText = p.verdict;
+        verdictBadge.className = "text-[10px] px-2 py-0.5 rounded border font-bold uppercase " + p.verdictClass;
+        document.getElementById('metaCognition').innerHTML = "Cognitive Bias: <span class='text-slate-200'>" + p.bias + "</span>";
+        document.getElementById('metaConfidence').innerHTML = "Epistemic Certainty: <span class='text-cyber-cyan'>" + p.certainty + "</span>";
+        document.getElementById('metaTokenCount').innerHTML = "Tokens: <span class='text-slate-200'>" + Math.floor(text.length / 4) + "</span>";
+
+      }, 250);
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('contactName').value;
+      const email = document.getElementById('contactEmail').value;
+      const org = document.getElementById('contactOrg').value;
+      const goal = document.getElementById('contactGoal').value;
+      const notes = document.getElementById('contactNotes').value;
+
+      document.getElementById('contactSuccessMsg').classList.remove('hidden');
+
+      // Prepare mailto fallback
+      const subject = encodeURIComponent("NexusPersona Enterprise Inquiry - " + org);
+      const body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\nOrganization: " + org + "\nGoal: " + goal + "\nNotes: " + notes);
+      window.location.href = "mailto:wtfearb@gmail.com?subject=" + subject + "&body=" + body;
+    }
+  </script>
+</body>
+</html>
